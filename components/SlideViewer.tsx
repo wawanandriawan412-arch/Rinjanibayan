@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
+import { ChevronLeft, ChevronRight, BookOpen, ExternalLink } from 'lucide-react';
 import { Slide } from '../types';
 
 interface SlideViewerProps {
@@ -21,8 +21,10 @@ const SlideViewer: React.FC<SlideViewerProps> = ({ slides }) => {
     }
   };
 
+  const currentSlide = slides[currentIndex];
+
   return (
-    <div className="bg-slate-800 rounded-xl shadow-xl overflow-hidden border border-slate-700 flex flex-col h-[500px]">
+    <div className="bg-slate-800 rounded-xl shadow-xl overflow-hidden border border-slate-700 flex flex-col h-[550px]">
       {/* Slide Header */}
       <div className="bg-slate-900 p-4 border-b border-slate-700 flex justify-between items-center">
         <div className="flex items-center space-x-2 text-amber-500">
@@ -35,14 +37,27 @@ const SlideViewer: React.FC<SlideViewerProps> = ({ slides }) => {
       </div>
 
       {/* Slide Content Area */}
-      <div className="flex-1 p-6 md:p-10 overflow-y-auto bg-slate-800 text-slate-100 flex flex-col justify-center">
-        <div className="max-w-3xl mx-auto w-full">
+      <div className="flex-1 p-6 md:p-10 overflow-y-auto bg-slate-800 text-slate-100">
+        <div className="max-w-3xl mx-auto w-full h-full flex flex-col">
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-amber-400 mb-6 border-b border-amber-500/30 pb-2">
-            {slides[currentIndex].title}
+            {currentSlide.title}
             </h2>
-            <div className="prose prose-invert prose-lg">
-            {slides[currentIndex].content}
+            <div className="prose prose-invert prose-lg flex-1">
+            {currentSlide.content}
             </div>
+
+            {/* TOMBOL SIMULASI OTOMATIS */}
+            {currentSlide.simulasiUrl && (
+              <a 
+                href={currentSlide.simulasiUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="mt-6 flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-black px-6 py-3 rounded-xl font-bold transition-all transform hover:scale-[1.02] shadow-lg shadow-amber-500/20"
+              >
+                <ExternalLink size={20} />
+                KLIK UNTUK SIMULASI INTERAKTIF
+              </a>
+            )}
         </div>
       </div>
 
@@ -61,11 +76,11 @@ const SlideViewer: React.FC<SlideViewerProps> = ({ slides }) => {
           Sebelumnya
         </button>
 
-        <div className="flex space-x-2">
+        <div className="hidden md:flex space-x-2">
             {slides.map((_, idx) => (
                 <div 
                     key={idx}
-                    className={`h-2 w-2 rounded-full ${idx === currentIndex ? 'bg-amber-500' : 'bg-slate-600'}`}
+                    className={`h-2 w-2 rounded-full transition-all ${idx === currentIndex ? 'bg-amber-500 w-4' : 'bg-slate-600'}`}
                 />
             ))}
         </div>

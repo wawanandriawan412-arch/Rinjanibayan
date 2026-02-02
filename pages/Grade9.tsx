@@ -1,87 +1,70 @@
 import React from 'react';
-import { Calculator, Variable, Layers, Milestone, Percent, Shapes } from 'lucide-react';
+import { Calculator, Zap, Shapes, PieChart, Activity, Minimize2, Maximize2 } from 'lucide-react';
 
-// 1. Data Menu dengan dua jenis link
-const menuMateri = [
+// 1. Data Materi Kelas 9
+const menuMateriKls9 = [
   { 
-    id: 'bilangan', 
-    title: 'Bilangan Bulat', 
+    id: 'perpangkatan', 
+    title: 'Perpangkatan & Akar', 
+    icon: Zap, 
+    color: 'from-yellow-500 to-orange-700', 
+    urlMateri: 'LINK_CANVA_ANDA',
+    urlGame: 'LINK_GAME_ANDA' 
+  },
+  { 
+    id: 'persamaan-kuadrat', 
+    title: 'Persamaan Kuadrat', 
     icon: Calculator, 
-    color: 'from-amber-500 to-orange-700', 
-    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nh6r1b5gekf45n',
-    urlGame: 'https://link-game-bilangan.com' 
-  },
-  { 
-    id: 'aljabar', 
-    title: 'Aljabar Dasar', 
-    icon: Variable, 
     color: 'from-blue-500 to-indigo-700', 
-    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0ng9qvn73kre0hh',
-    urlGame: 'https://link-game-aljabar.com' 
-  },
-  { 
-    id: 'himpunan', 
-    title: 'Himpunan', 
-    icon: Layers, 
-    color: 'from-purple-500 to-pink-700', 
-    urlMateri: 'https://link-materi-himpunan.com',
-    urlGame: '' // Jika dikosongkan, tombol game tidak muncul
-  },
-  { 
-    id: 'persamaan', 
-    title: 'Persamaan Linear', 
-    icon: Milestone, 
-    color: 'from-emerald-500 to-teal-700', 
-    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nfp3pp232q00c2',
-    urlGame: 'https://link-game-persamaan.com' 
-  },
-  { 
-    id: 'rasio', 
-    title: 'Perbandingan', 
-    icon: Percent, 
-    color: 'from-rose-500 to-red-700', 
-    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0n9fbkhvy95byqc',
+    urlMateri: 'LINK_CANVA_ANDA',
     urlGame: '' 
   },
   { 
-    id: 'geometri', 
-    title: 'Bangun Datar', 
-    icon: Shapes, 
-    color: 'from-cyan-500 to-blue-700', 
-    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nc4ypzzxhxgvm1',
-    urlGame: 'https://link-game-geometri.com' 
+    id: 'fungsi-kuadrat', 
+    title: 'Fungsi Kuadrat', 
+    icon: Activity, 
+    color: 'from-purple-500 to-pink-700', 
+    urlMateri: 'LINK_CANVA_ANDA',
+    urlGame: '' 
   },
   { 
-    id: 'Bangun Ruang', 
-    title: 'Bangun Ruang', 
-    icon: Shapes, 
-    color: 'from-cyan-500 to-blue-700', 
-    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0ndqtv0kk6xzz9n',
-    urlGame: 'https://link-game-geometri.com' 
+    id: 'transformasi', 
+    title: 'Transformasi Geometri', 
+    icon: Minimize2, 
+    color: 'from-emerald-500 to-teal-700', 
+    urlMateri: 'LINK_CANVA_ANDA',
+    urlGame: 'LINK_GAME_ANDA' 
   },
   { 
-    id: 'Menggunakan Data', 
-    title: 'Menggunakan Data', 
+    id: 'kesebangunan', 
+    title: 'Kesebangunan', 
+    icon: Maximize2, 
+    color: 'from-rose-500 to-red-700', 
+    urlMateri: 'LINK_CANVA_ANDA',
+    urlGame: '' 
+  },
+  { 
+    id: 'bangun-ruang-sisi-lengkung', 
+    title: 'BRSL', 
     icon: Shapes, 
     color: 'from-cyan-500 to-blue-700', 
-    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nerw8wk16caqe6',
-    urlGame: 'https://link-game-geometri.com' 
-  },
-  
+    urlMateri: 'LINK_CANVA_ANDA',
+    urlGame: '' 
+  }
 ];
 
-const Grade7: React.FC = () => {
+const Grade9: React.FC = () => {
   return (
     <div className="p-8 space-y-8 animate-in fade-in duration-700">
       <div className="text-center mb-10">
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-          Kelas 7: Materi & Game
+          Kelas 9: Materi & Game
         </h1>
-        <p className="text-slate-400">Pilih modul pembelajaran atau tantangan game di bawah ini</p>
+        <p className="text-slate-400">Persiapan ujian dan pendalaman materi matematika kelas 9.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {menuMateri.map((item) => (
+        {menuMateriKls9.map((item) => (
           <div 
             key={item.id} 
             className={`group p-1 bg-gradient-to-br ${item.color} rounded-3xl transition-all hover:scale-[1.02] shadow-xl`}
@@ -90,10 +73,9 @@ const Grade7: React.FC = () => {
               <div>
                 <item.icon className="text-white opacity-80 mb-4 group-hover:rotate-12 transition-transform" size={40} />
                 <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-slate-500 text-xs mb-6">Tingkatkan pemahamanmu dengan materi interaktif dan game seru.</p>
+                <p className="text-slate-500 text-xs mb-6">Materi interaktif untuk membantu persiapan kelulusanmu.</p>
               </div>
               
-              {/* Bagian Tombol Aksi */}
               <div className="grid grid-cols-2 gap-3">
                 <button 
                   onClick={() => window.open(item.urlMateri, '_blank')}
@@ -102,7 +84,6 @@ const Grade7: React.FC = () => {
                   📖 Materi
                 </button>
 
-                {/* Tombol Game hanya muncul jika urlGame tidak kosong */}
                 {item.urlGame ? (
                   <button 
                     onClick={() => window.open(item.urlGame, '_blank')}
@@ -124,4 +105,4 @@ const Grade7: React.FC = () => {
   );
 };
 
-export default Grade7;
+export default Grade9;

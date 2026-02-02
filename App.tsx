@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Grade7 from './pages/Grade7';
+import Grade8 from './pages/Grade8';
+import Grade9 from './pages/Grade9';
 import ChatWidget from './components/ChatWidget';
 import { Page } from './types';
 import { Construction } from 'lucide-react';
@@ -26,9 +28,9 @@ const App: React.FC = () => {
       case Page.GRADE_7:
         return <Grade7 />;
       case Page.GRADE_8:
-        return <PlaceholderPage title="Materi Kelas 8" />;
+        return <Grade8 />;
       case Page.GRADE_9:
-        return <PlaceholderPage title="Materi Kelas 9" />;
+        return <Grade9 />;
       default:
         return <Home setPage={setCurrentPage} />;
     }

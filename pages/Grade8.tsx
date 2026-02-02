@@ -1,87 +1,86 @@
 import React from 'react';
-import { Calculator, Variable, Layers, Milestone, Percent, Shapes } from 'lucide-react';
+import { Calculator, Variable, Layers, Milestone, Shapes, TrendingUp, BarChart, Zap } from 'lucide-react';
 
-// 1. Data Menu dengan dua jenis link
-const menuMateri = [
+// 1. Data Materi Kelas 8
+const menuMateriKls8 = [
   { 
-    id: 'bilangan', 
-    title: 'Bilangan Bulat', 
-    icon: Calculator, 
-    color: 'from-amber-500 to-orange-700', 
-    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nh6r1b5gekf45n',
-    urlGame: 'https://link-game-bilangan.com' 
-  },
-  { 
-    id: 'aljabar', 
-    title: 'Aljabar Dasar', 
-    icon: Variable, 
+    id: 'pola-bilangan', 
+    title: 'Pola Bilangan', 
+    icon: TrendingUp, 
     color: 'from-blue-500 to-indigo-700', 
-    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0ng9qvn73kre0hh',
-    urlGame: 'https://link-game-aljabar.com' 
+    urlMateri: 'https://link-materi-pola.com',
+    urlGame: 'https://link-game-pola.com' 
   },
   { 
-    id: 'himpunan', 
-    title: 'Himpunan', 
-    icon: Layers, 
+    id: 'kartesius', 
+    title: 'Koordinat Kartesius', 
+    icon: Shapes, 
     color: 'from-purple-500 to-pink-700', 
-    urlMateri: 'https://link-materi-himpunan.com',
-    urlGame: '' // Jika dikosongkan, tombol game tidak muncul
-  },
-  { 
-    id: 'persamaan', 
-    title: 'Persamaan Linear', 
-    icon: Milestone, 
-    color: 'from-emerald-500 to-teal-700', 
-    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nfp3pp232q00c2',
-    urlGame: 'https://link-game-persamaan.com' 
-  },
-  { 
-    id: 'rasio', 
-    title: 'Perbandingan', 
-    icon: Percent, 
-    color: 'from-rose-500 to-red-700', 
-    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0n9fbkhvy95byqc',
+    urlMateri: 'https://link-materi-kartesius.com',
     urlGame: '' 
   },
   { 
-    id: 'geometri', 
-    title: 'Bangun Datar', 
-    icon: Shapes, 
-    color: 'from-cyan-500 to-blue-700', 
-    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nc4ypzzxhxgvm1',
-    urlGame: 'https://link-game-geometri.com' 
+    id: 'relasi-fungsi', 
+    title: 'Relasi & Fungsi', 
+    icon: Layers, 
+    color: 'from-amber-500 to-orange-700', 
+    urlMateri: 'https://link-materi-fungsi.com',
+    urlGame: 'https://link-game-fungsi.com' 
   },
   { 
-    id: 'Bangun Ruang', 
-    title: 'Bangun Ruang', 
-    icon: Shapes, 
-    color: 'from-cyan-500 to-blue-700', 
-    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0ndqtv0kk6xzz9n',
-    urlGame: 'https://link-game-geometri.com' 
+    id: 'persamaan-garis', 
+    title: 'Persamaan Garis Lurus', 
+    icon: Milestone, 
+    color: 'from-emerald-500 to-teal-700', 
+    urlMateri: 'https://link-materi-pgl.com',
+    urlGame: 'https://link-game-pgl.com' 
   },
   { 
-    id: 'Menggunakan Data', 
-    title: 'Menggunakan Data', 
-    icon: Shapes, 
-    color: 'from-cyan-500 to-blue-700', 
-    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nerw8wk16caqe6',
-    urlGame: 'https://link-game-geometri.com' 
+    id: 'spldv', 
+    title: 'SPLDV', 
+    icon: Variable, 
+    color: 'from-rose-500 to-red-700', 
+    urlMateri: 'https://link-materi-spldv.com',
+    urlGame: '' 
   },
-  
+  { 
+    id: 'teorema-pythagoras', 
+    title: 'Teorema Pythagoras', 
+    icon: Zap, 
+    color: 'from-cyan-500 to-blue-700', 
+    urlMateri: 'https://link-materi-pythagoras.com',
+    urlGame: 'https://link-game-pythagoras.com' 
+  },
+  { 
+    id: 'lingkaran', 
+    title: 'Lingkaran', 
+    icon: Calculator, 
+    color: 'from-violet-500 to-purple-800', 
+    urlMateri: 'https://link-materi-lingkaran.com',
+    urlGame: '' 
+  },
+  { 
+    id: 'statistika-8', 
+    title: 'Statistika', 
+    icon: BarChart, 
+    color: 'from-green-500 to-emerald-800', 
+    urlMateri: 'https://link-materi-statistika.com',
+    urlGame: '' 
+  },
 ];
 
-const Grade7: React.FC = () => {
+const Grade8: React.FC = () => {
   return (
     <div className="p-8 space-y-8 animate-in fade-in duration-700">
       <div className="text-center mb-10">
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-          Kelas 7: Materi & Game
+          Kelas 8: Materi & Game
         </h1>
-        <p className="text-slate-400">Pilih modul pembelajaran atau tantangan game di bawah ini</p>
+        <p className="text-slate-400">Silakan pilih topik matematika untuk mulai belajar secara interaktif.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {menuMateri.map((item) => (
+        {menuMateriKls8.map((item) => (
           <div 
             key={item.id} 
             className={`group p-1 bg-gradient-to-br ${item.color} rounded-3xl transition-all hover:scale-[1.02] shadow-xl`}
@@ -93,7 +92,6 @@ const Grade7: React.FC = () => {
                 <p className="text-slate-500 text-xs mb-6">Tingkatkan pemahamanmu dengan materi interaktif dan game seru.</p>
               </div>
               
-              {/* Bagian Tombol Aksi */}
               <div className="grid grid-cols-2 gap-3">
                 <button 
                   onClick={() => window.open(item.urlMateri, '_blank')}
@@ -102,7 +100,6 @@ const Grade7: React.FC = () => {
                   📖 Materi
                 </button>
 
-                {/* Tombol Game hanya muncul jika urlGame tidak kosong */}
                 {item.urlGame ? (
                   <button 
                     onClick={() => window.open(item.urlGame, '_blank')}
@@ -124,4 +121,4 @@ const Grade7: React.FC = () => {
   );
 };
 
-export default Grade7;
+export default Grade8;
