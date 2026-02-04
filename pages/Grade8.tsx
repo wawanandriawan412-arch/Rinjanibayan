@@ -4,27 +4,27 @@ import { Calculator, Variable, Layers, Milestone, Shapes, TrendingUp, BarChart, 
 // 1. Data Materi Kelas 8
 const menuMateriKls8 = [
   { 
-    id: 'pola-bilangan', 
-    title: 'Pola Bilangan', 
+    id: 'Menyederhanakan Bentuk Aljabar', 
+    title: 'Menyederhanakan Bentuk Aljabar', 
     icon: TrendingUp, 
     color: 'from-blue-500 to-indigo-700', 
-    urlMateri: 'https://link-materi-pola.com',
+    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0r41gxm2xh1d4b1',
     urlGame: 'https://link-game-pola.com' 
   },
   { 
-    id: 'kartesius', 
-    title: 'Koordinat Kartesius', 
+    id: 'SPLDV', 
+    title: 'SPLDV', 
     icon: Shapes, 
     color: 'from-purple-500 to-pink-700', 
-    urlMateri: 'https://link-materi-kartesius.com',
+    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0r88zy8b0x2edsw',
     urlGame: '' 
   },
   { 
-    id: 'relasi-fungsi', 
-    title: 'Relasi & Fungsi', 
+    id: 'fungsi linier', 
+    title: 'Fungsi Linier', 
     icon: Layers, 
     color: 'from-amber-500 to-orange-700', 
-    urlMateri: 'https://link-materi-fungsi.com',
+    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0r95s0xdsjvd6j2',
     urlGame: 'https://link-game-fungsi.com' 
   },
   { 
