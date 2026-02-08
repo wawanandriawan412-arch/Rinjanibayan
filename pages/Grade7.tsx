@@ -1,7 +1,6 @@
 import React from 'react';
-import { Calculator, Variable, Layers, Milestone, Percent, Shapes } from 'lucide-react';
+import { Calculator, Variable, Layers, Milestone, Percent, Shapes, HelpCircle } from 'lucide-react';
 
-// 1. Data Menu dengan dua jenis link
 const menuMateri = [
   { 
     id: 'bilangan', 
@@ -9,7 +8,8 @@ const menuMateri = [
     icon: Calculator, 
     color: 'from-amber-500 to-orange-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nh6r1b5gekf45n',
-    urlGame: 'https://link-game-bilangan.com' 
+    urlGame: 'https://link-game-bilangan.com',
+    urlPanduan: '#' // Tambahkan link panduan di sini
   },
   { 
     id: 'aljabar', 
@@ -17,7 +17,8 @@ const menuMateri = [
     icon: Variable, 
     color: 'from-blue-500 to-indigo-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0ng9qvn73kre0hh',
-    urlGame: 'https://link-game-aljabar.com' 
+    urlGame: 'https://link-game-aljabar.com',
+    urlPanduan: 'https://link-panduan-bilangan.com' // Koma sudah diperbaiki
   },
   { 
     id: 'himpunan', 
@@ -25,7 +26,8 @@ const menuMateri = [
     icon: Layers, 
     color: 'from-purple-500 to-pink-700', 
     urlMateri: 'https://link-materi-himpunan.com',
-    urlGame: '' // Jika dikosongkan, tombol game tidak muncul
+    urlGame: '',
+    urlPanduan: '#'
   },
   { 
     id: 'persamaan', 
@@ -33,7 +35,8 @@ const menuMateri = [
     icon: Milestone, 
     color: 'from-emerald-500 to-teal-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nfp3pp232q00c2',
-    urlGame: 'https://link-game-persamaan.com' 
+    urlGame: 'https://link-game-persamaan.com',
+    urlPanduan: '#'
   },
   { 
     id: 'rasio', 
@@ -41,7 +44,8 @@ const menuMateri = [
     icon: Percent, 
     color: 'from-rose-500 to-red-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0n9fbkhvy95byqc',
-    urlGame: '' 
+    urlGame: '',
+    urlPanduan: '#'
   },
   { 
     id: 'geometri', 
@@ -49,30 +53,32 @@ const menuMateri = [
     icon: Shapes, 
     color: 'from-cyan-500 to-blue-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nc4ypzzxhxgvm1',
-    urlGame: 'https://link-game-geometri.com' 
+    urlGame: 'https://link-game-geometri.com',
+    urlPanduan: '#'
   },
   { 
-    id: 'Bangun Ruang', 
+    id: 'bangun-ruang', 
     title: 'Bangun Ruang', 
     icon: Shapes, 
     color: 'from-cyan-500 to-blue-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0ndqtv0kk6xzz9n',
-    urlGame: 'https://link-game-geometri.com' 
+    urlGame: 'https://link-game-geometri.com',
+    urlPanduan: '#'
   },
   { 
-    id: 'Menggunakan Data', 
+    id: 'menggunakan-data', 
     title: 'Menggunakan Data', 
     icon: Shapes, 
     color: 'from-cyan-500 to-blue-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nerw8wk16caqe6',
-    urlGame: 'https://link-game-geometri.com' 
+    urlGame: 'https://link-game-geometri.com',
+    urlPanduan: '#'
   },
-  
 ];
 
 const Grade7: React.FC = () => {
   return (
-    <div className="p-8 space-y-8 animate-in fade-in duration-700">
+    <div className="p-8 space-y-8 animate-in fade-in duration-700 bg-slate-950 min-h-screen">
       <div className="text-center mb-10">
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
           Kelas 7: Materi & Game
@@ -93,28 +99,40 @@ const Grade7: React.FC = () => {
                 <p className="text-slate-500 text-xs mb-6">Tingkatkan pemahamanmu dengan materi interaktif dan game seru.</p>
               </div>
               
-              {/* Bagian Tombol Aksi */}
-              <div className="grid grid-cols-2 gap-3">
+              {/* Bagian Tombol Aksi - 3 Kolom */}
+              <div className="grid grid-cols-3 gap-2">
+                {/* Tombol 1: Materi */}
                 <button 
                   onClick={() => window.open(item.urlMateri, '_blank')}
-                  className="bg-white/5 hover:bg-white/10 text-white text-[11px] py-3 rounded-xl transition-all border border-white/10 font-semibold"
+                  className="bg-white/5 hover:bg-white/10 text-white text-[10px] py-3 rounded-xl transition-all border border-white/10 font-semibold flex flex-col items-center justify-center gap-1"
                 >
-                  📖 Materi
+                  <span className="text-sm">📖</span>
+                  <span>Materi</span>
                 </button>
 
-                {/* Tombol Game hanya muncul jika urlGame tidak kosong */}
+                {/* Tombol 2: Game Interaktif (Conditional) */}
                 {item.urlGame ? (
                   <button 
                     onClick={() => window.open(item.urlGame, '_blank')}
-                    className="bg-emerald-500 hover:bg-emerald-600 text-white text-[11px] py-3 rounded-xl transition-all font-bold shadow-lg shadow-emerald-900/40"
+                    className="bg-emerald-500 hover:bg-emerald-600 text-white text-[10px] py-3 rounded-xl transition-all font-bold shadow-lg shadow-emerald-900/40 flex flex-col items-center justify-center gap-1"
                   >
-                    🎮 Play Game
+                    <span className="text-sm">🎮</span>
+                    <span>Interaktif</span>
                   </button>
                 ) : (
-                  <div className="bg-slate-800 text-slate-500 text-[10px] py-3 rounded-xl flex items-center justify-center italic">
+                  <div className="bg-slate-800 text-slate-500 text-[10px] py-3 rounded-xl flex items-center justify-center italic font-medium">
                     Soon
                   </div>
                 )}
+
+                {/* Tombol 3: Game 3D (Selalu Muncul) */}
+                <button
+                  onClick={() => item.urlPanduan && item.urlPanduan !== '#' ? window.open(item.urlPanduan, '_blank') : alert('Panduan belum tersedia')}
+                  className="bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 text-[10px] py-3 rounded-xl transition-all border border-blue-500/30 font-semibold flex flex-col items-center justify-center gap-1"
+                >
+                  <span className="text-sm">🎮</span>
+                  <span>Game 3D</span>
+                </button>
               </div>
             </div>
           </div>

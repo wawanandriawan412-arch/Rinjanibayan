@@ -12,9 +12,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
 
   const navItems = [
     { label: 'Beranda', value: Page.HOME },
-    { label: 'Kelas 7', value: Page.GRADE_7 },
-    { label: 'Kelas 8', value: Page.GRADE_8 },
-    { label: 'Kelas 9', value: Page.GRADE_9 },
+ 
   ];
 
   return (

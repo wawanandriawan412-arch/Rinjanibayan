@@ -1,7 +1,7 @@
 import React from 'react';
-import { Calculator, Zap, Shapes, PieChart, Activity, Minimize2, Maximize2 } from 'lucide-react';
+import { Calculator, Zap, Shapes, Activity, Minimize2, Maximize2 } from 'lucide-react';
 
-// 1. Data Materi Kelas 9
+// 1. Data Materi Kelas 9 dengan 3 Link
 const menuMateriKls9 = [
   { 
     id: 'perpangkatan', 
@@ -9,7 +9,8 @@ const menuMateriKls9 = [
     icon: Zap, 
     color: 'from-yellow-500 to-orange-700', 
     urlMateri: 'LINK_CANVA_ANDA',
-    urlGame: 'LINK_GAME_ANDA' 
+    urlGame: 'LINK_GAME_ANDA',
+    urlPanduan: '#' // Masukkan link Game 3D Roblox di sini
   },
   { 
     id: 'persamaan-kuadrat', 
@@ -17,7 +18,8 @@ const menuMateriKls9 = [
     icon: Calculator, 
     color: 'from-blue-500 to-indigo-700', 
     urlMateri: 'LINK_CANVA_ANDA',
-    urlGame: '' 
+    urlGame: '', 
+    urlPanduan: '#'
   },
   { 
     id: 'fungsi-kuadrat', 
@@ -25,7 +27,8 @@ const menuMateriKls9 = [
     icon: Activity, 
     color: 'from-purple-500 to-pink-700', 
     urlMateri: 'LINK_CANVA_ANDA',
-    urlGame: '' 
+    urlGame: '', 
+    urlPanduan: '#'
   },
   { 
     id: 'transformasi', 
@@ -33,7 +36,8 @@ const menuMateriKls9 = [
     icon: Minimize2, 
     color: 'from-emerald-500 to-teal-700', 
     urlMateri: 'LINK_CANVA_ANDA',
-    urlGame: 'LINK_GAME_ANDA' 
+    urlGame: 'LINK_GAME_ANDA',
+    urlPanduan: '#'
   },
   { 
     id: 'kesebangunan', 
@@ -41,21 +45,24 @@ const menuMateriKls9 = [
     icon: Maximize2, 
     color: 'from-rose-500 to-red-700', 
     urlMateri: 'LINK_CANVA_ANDA',
-    urlGame: '' 
+    urlGame: '', 
+    urlPanduan: '#'
   },
   { 
-    id: 'bangun-ruang-sisi-lengkung', 
+    id: 'brsl', 
     title: 'BRSL', 
     icon: Shapes, 
     color: 'from-cyan-500 to-blue-700', 
     urlMateri: 'LINK_CANVA_ANDA',
-    urlGame: '' 
+    urlGame: '', 
+    urlPanduan: '#'
   }
 ];
 
 const Grade9: React.FC = () => {
   return (
-    <div className="p-8 space-y-8 animate-in fade-in duration-700">
+    <div className="p-8 space-y-8 animate-in fade-in duration-700 bg-slate-950 min-h-screen">
+      {/* Header */}
       <div className="text-center mb-10">
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
           Kelas 9: Materi & Game
@@ -63,6 +70,7 @@ const Grade9: React.FC = () => {
         <p className="text-slate-400">Persiapan ujian dan pendalaman materi matematika kelas 9.</p>
       </div>
 
+      {/* Grid Materi */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {menuMateriKls9.map((item) => (
           <div 
@@ -76,26 +84,42 @@ const Grade9: React.FC = () => {
                 <p className="text-slate-500 text-xs mb-6">Materi interaktif untuk membantu persiapan kelulusanmu.</p>
               </div>
               
-              <div className="grid grid-cols-2 gap-3">
+              {/* Bagian Tombol Aksi - 3 Kolom */}
+              <div className="grid grid-cols-3 gap-2">
+                
+                {/* Tombol 1: Materi */}
                 <button 
                   onClick={() => window.open(item.urlMateri, '_blank')}
-                  className="bg-white/5 hover:bg-white/10 text-white text-[11px] py-3 rounded-xl transition-all border border-white/10 font-semibold"
+                  className="bg-white/5 hover:bg-white/10 text-white text-[10px] py-3 rounded-xl transition-all border border-white/10 font-semibold flex flex-col items-center justify-center gap-1"
                 >
-                  📖 Materi
+                  <span className="text-sm">📖</span>
+                  <span>Materi</span>
                 </button>
 
+                {/* Tombol 2: Game Interaktif (Conditional) */}
                 {item.urlGame ? (
                   <button 
                     onClick={() => window.open(item.urlGame, '_blank')}
-                    className="bg-emerald-500 hover:bg-emerald-600 text-white text-[11px] py-3 rounded-xl transition-all font-bold shadow-lg shadow-emerald-900/40"
+                    className="bg-emerald-500 hover:bg-emerald-600 text-white text-[10px] py-3 rounded-xl transition-all font-bold shadow-lg shadow-emerald-900/40 flex flex-col items-center justify-center gap-1"
                   >
-                    🎮 Play Game
+                    <span className="text-sm">🎮</span>
+                    <span>Interaktif</span>
                   </button>
                 ) : (
-                  <div className="bg-slate-800 text-slate-500 text-[10px] py-3 rounded-xl flex items-center justify-center italic">
+                  <div className="bg-slate-800 text-slate-500 text-[10px] py-3 rounded-xl flex items-center justify-center italic font-medium text-center">
                     Soon
                   </div>
                 )}
+
+                {/* Tombol 3: Game 3D (Selalu Muncul) */}
+                <button
+                  onClick={() => item.urlPanduan && item.urlPanduan !== '#' ? window.open(item.urlPanduan, '_blank') : alert('Game 3D belum tersedia')}
+                  className="bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 text-[10px] py-3 rounded-xl transition-all border border-blue-500/30 font-semibold flex flex-col items-center justify-center gap-1"
+                >
+                  <span className="text-sm">🚀</span>
+                  <span>Game 3D</span>
+                </button>
+
               </div>
             </div>
           </div>
