@@ -10,15 +10,23 @@ export default defineConfig(({ mode }) => {
         host: '0.0.0.0',
       },
       plugins: [react()],
-      base: './', // Tambahkan baris ini
+      // Menggunakan base relatif agar file CSS/JS ditemukan di mana pun folder deploy-nya
+      base: './', 
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
       },
       resolve: {
         alias: {
-          '@': path.resolve(__dirname, '.'),
+          // Mengubah alias ke folder 'src' biasanya lebih standar untuk proyek Vite
+          '@': path.resolve(__dirname, './src'),
         }
+      },
+      build: {
+        // Memastikan output masuk ke folder 'dist'
+        outDir: 'dist',
+        // Menghindari masalah MIME type dengan memastikan aset diproses dengan benar
+        assetsDir: 'assets',
       }
     };
 });
