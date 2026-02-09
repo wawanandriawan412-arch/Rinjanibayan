@@ -4,13 +4,14 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
+    
     return {
       server: {
         port: 3000,
         host: '0.0.0.0',
       },
       plugins: [react()],
-      // Sangat penting agar aset menggunakan path relatif
+      // Penting agar Cloudflare bisa menemukan aset dengan jalur relatif
       base: './', 
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
@@ -18,14 +19,13 @@ export default defineConfig(({ mode }) => {
       },
       resolve: {
         alias: {
-          '@': path.resolve(__dirname, './src'),
+          // PERBAIKAN: Alias diarahkan ke root '.' karena index.tsx/App.tsx ada di luar
+          '@': path.resolve(__dirname, '.'),
         }
       },
       build: {
-        // Memastikan folder output sesuai dengan yang diatur di dashboard Cloudflare
-        outDir: 'dist',
+        outDir: 'dist', // Lokasi hasil build untuk Cloudflare Pages
         assetsDir: 'assets',
-        // Membersihkan folder dist sebelum build baru
         emptyOutDir: true,
       }
     };
