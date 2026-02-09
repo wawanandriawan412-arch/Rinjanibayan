@@ -8,7 +8,7 @@ const menuMateri = [
     icon: Calculator, 
     color: 'from-amber-500 to-orange-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nh6r1b5gekf45n',
-    urlGame: 'https://bilanganbulatsmpn5bayan.netlify.app/',
+    urlGame: 'https://kotak-keberuntungan-matematika--bilangan-bulat--1.pages.dev/',
     urlPanduan: '#' // Tambahkan link panduan di sini
   },
   { 
