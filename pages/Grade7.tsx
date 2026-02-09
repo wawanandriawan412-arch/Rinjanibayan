@@ -8,7 +8,7 @@ const menuMateri = [
     icon: Calculator, 
     color: 'from-amber-500 to-orange-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nh6r1b5gekf45n',
-    urlGame: 'https://link-game-bilangan.com',
+    urlGame: 'https://bilanganbulatsmpn5bayan.netlify.app/',
     urlPanduan: '#' // Tambahkan link panduan di sini
   },
   { 
@@ -17,7 +17,7 @@ const menuMateri = [
     icon: Variable, 
     color: 'from-blue-500 to-indigo-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0ng9qvn73kre0hh',
-    urlGame: 'https://link-game-aljabar.com',
+    urlGame: 'https://gamealjabar.netlify.app/',
     urlPanduan: 'https://link-panduan-bilangan.com' // Koma sudah diperbaiki
   },
   { 
@@ -35,7 +35,7 @@ const menuMateri = [
     icon: Milestone, 
     color: 'from-emerald-500 to-teal-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nfp3pp232q00c2',
-    urlGame: 'https://link-game-persamaan.com',
+    urlGame: 'https://persamaanliniersmpn5bayan.netlify.app/',
     urlPanduan: '#'
   },
   { 
