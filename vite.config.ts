@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
         host: '0.0.0.0',
       },
       plugins: [react()],
-      // Menggunakan base relatif agar file CSS/JS ditemukan di mana pun folder deploy-nya
+      // Sangat penting agar aset menggunakan path relatif
       base: './', 
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
@@ -18,15 +18,15 @@ export default defineConfig(({ mode }) => {
       },
       resolve: {
         alias: {
-          // Mengubah alias ke folder 'src' biasanya lebih standar untuk proyek Vite
           '@': path.resolve(__dirname, './src'),
         }
       },
       build: {
-        // Memastikan output masuk ke folder 'dist'
+        // Memastikan folder output sesuai dengan yang diatur di dashboard Cloudflare
         outDir: 'dist',
-        // Menghindari masalah MIME type dengan memastikan aset diproses dengan benar
         assetsDir: 'assets',
+        // Membersihkan folder dist sebelum build baru
+        emptyOutDir: true,
       }
     };
 });
