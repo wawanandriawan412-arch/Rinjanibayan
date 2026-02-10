@@ -17,7 +17,7 @@ const menuMateri = [
     icon: Variable, 
     color: 'from-blue-500 to-indigo-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0ng9qvn73kre0hh',
-    urlGame: 'https://gamealjabar.netlify.app/',
+    urlGame: 'https://game-aljabar.pages.dev/',
     urlPanduan: 'https://link-panduan-bilangan.com' // Koma sudah diperbaiki
   },
   { 
@@ -35,7 +35,7 @@ const menuMateri = [
     icon: Milestone, 
     color: 'from-emerald-500 to-teal-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nfp3pp232q00c2',
-    urlGame: 'https://persamaanliniersmpn5bayan.netlify.app/',
+    urlGame: 'https://persamaan-linier.pages.dev/',
     urlPanduan: '#'
   },
   { 
@@ -44,7 +44,7 @@ const menuMateri = [
     icon: Percent, 
     color: 'from-rose-500 to-red-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0n9fbkhvy95byqc',
-    urlGame: '',
+    urlGame: 'https://perbandingan.pages.dev/',
     urlPanduan: '#'
   },
   { 
@@ -53,7 +53,7 @@ const menuMateri = [
     icon: Shapes, 
     color: 'from-cyan-500 to-blue-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nc4ypzzxhxgvm1',
-    urlGame: 'https://link-game-geometri.com',
+    urlGame: 'https://game-bangun.pages.dev/',
     urlPanduan: '#'
   },
   { 
