@@ -9,7 +9,8 @@ const menuMateri = [
     color: 'from-amber-500 to-orange-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nh6r1b5gekf45n',
     urlGame: 'https://kotak-keberuntungan-matematika--bilangan-bulat--1.pages.dev/',
-    urlPanduan: '#' // Tambahkan link panduan di sini
+    urlPanduan: 'https://www.roblox.com/id/games/111204377378825/game-bilangan-bulat',// Tambahkan link panduan di sini
+    Poinbakti: 'https://ai.studio/apps/drive/1Na8M-1E0DHSe8v-wLhh49cZUDoGtsKHy?fullscreenApplet=true'
   },
   { 
     id: 'aljabar', 
@@ -53,7 +54,7 @@ const menuMateri = [
     icon: Shapes, 
     color: 'from-cyan-500 to-blue-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nc4ypzzxhxgvm1',
-    urlGame: 'https://game-bangun.pages.dev/',
+    urlGame: 'https://aistudio.google.com/apps/drive/15NbWPxFujqnTrdnLr4z0TQG5imYBt9PJ?fullscreenApplet=true&showPreview=true&showAssistant=true',
     urlPanduan: '#'
   },
   { 
@@ -63,7 +64,7 @@ const menuMateri = [
     color: 'from-cyan-500 to-blue-700', 
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0ndqtv0kk6xzz9n',
     urlGame: 'https://link-game-geometri.com',
-    urlPanduan: '#'
+    urlPanduan: 'https://www.roblox.com/id/games/109167283944428/game-2'
   },
   { 
     id: 'menggunakan-data', 
@@ -99,7 +100,7 @@ const Grade7: React.FC = () => {
                 <p className="text-slate-500 text-xs mb-6">Tingkatkan pemahamanmu dengan materi interaktif dan game seru.</p>
               </div>
               
-              {/* Bagian Tombol Aksi - 3 Kolom */}
+              {/* Bagian Tombol Aksi - 4 Kolom */}
               <div className="grid grid-cols-3 gap-2">
                 {/* Tombol 1: Materi */}
                 <button 
@@ -125,7 +126,22 @@ const Grade7: React.FC = () => {
                   </div>
                 )}
 
-                {/* Tombol 3: Game 3D (Selalu Muncul) */}
+                {/* Tombol 3: Game Interaktif (Conditional) */}
+                {item.Poinbakti ? (
+                  <button 
+                    onClick={() => window.open(item.Poinbakti, '_blank')}
+                    className="bg-emerald-500 hover:bg-emerald-600 text-white text-[10px] py-3 rounded-xl transition-all font-bold shadow-lg shadow-emerald-900/40 flex flex-col items-center justify-center gap-1"
+                  >
+                    <span className="text-sm">🎮</span>
+                    <span>Poin Bakti</span>
+                  </button>
+                ) : (
+                  <div className="bg-slate-800 text-slate-500 text-[10px] py-3 rounded-xl flex items-center justify-center italic font-medium">
+                    Soon
+                  </div>
+                )}
+
+                {/* Tombol 4: Game 3D (Selalu Muncul) */}
                 <button
                   onClick={() => item.urlPanduan && item.urlPanduan !== '#' ? window.open(item.urlPanduan, '_blank') : alert('Panduan belum tersedia')}
                   className="bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 text-[10px] py-3 rounded-xl transition-all border border-blue-500/30 font-semibold flex flex-col items-center justify-center gap-1"
