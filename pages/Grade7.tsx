@@ -10,7 +10,7 @@ const menuMateri = [
     urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0nh6r1b5gekf45n',
     urlGame: 'https://kotak-keberuntungan-matematika--bilangan-bulat--1.pages.dev/',
     urlPanduan: 'https://www.roblox.com/id/games/111204377378825/game-bilangan-bulat',// Tambahkan link panduan di sini
-    Poinbakti: 'https://ai.studio/apps/drive/1Na8M-1E0DHSe8v-wLhh49cZUDoGtsKHy?fullscreenApplet=true'
+    Poinbakti: 'https://baktimatematika--1.pages.dev/'
   },
   { 
     id: 'aljabar', 
