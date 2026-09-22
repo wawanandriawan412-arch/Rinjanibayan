@@ -44,7 +44,7 @@ const menuMateriKls8 = [
     title: 'Persamaan Garis Lurus', 
     icon: Milestone, 
     color: 'from-emerald-500 to-teal-700', 
-    urlMateri: 'https://link-materi-pgl.com',
+    urlMateri: 'https://murid.kemendikdasmen.go.id/sumber-belajar/materi/interaktif/persamaan-garis-lurus-bc0867ae-52ee-4111-b0c0-aba9486ec5e2?id_sub_unit=30197fed-bba1-4183-9f30-144ad87d040a',
     urlGame: 'https://link-game-pgl.com',
     urlPanduan: '#'
   },
@@ -62,7 +62,7 @@ const menuMateriKls8 = [
     title: 'Teorema Pythagoras', 
     icon: Zap, 
     color: 'from-cyan-500 to-blue-700', 
-    urlMateri: 'https://link-materi-pythagoras.com',
+    urlMateri: 'https://murid.kemendikdasmen.go.id/sumber-belajar/materi/interaktif/teorema-pythagoras-a9d56d27-c477-4a17-b598-aa6c8ffafc1b?id_sub_unit=37a8af47-9a35-4009-9cd0-1f1006f4e1ea',
     urlGame: 'https://link-game-pythagoras.com',
     urlPanduan: '#'
   },
