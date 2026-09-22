@@ -62,7 +62,7 @@ const menuMateri = [
     title: 'Bangun Ruang', 
     icon: Shapes, 
     color: 'from-cyan-500 to-blue-700', 
-    urlMateri: 'https://media-prisma-segitiga.my.canva.site/c0ndqtv0kk6xzz9n',
+    urlMateri: 'https://murid.kemendikdasmen.go.id/sumber-belajar/materi/interaktif/volume-bangun-ruang-sisi-lengkung-bc04ebdd-f0e1-4af8-b456-1293df612473?id_sub_unit=e7729924-55f8-4b20-9392-550cc3560025',
     urlGame: 'https://link-game-geometri.com',
     urlPanduan: 'https://www.roblox.com/id/games/109167283944428/game-2'
   },

@@ -10,15 +10,7 @@ interface MapelProps {
 const Mapel: React.FC<MapelProps> = ({ setPage, setSelectedMapel }) => {
   const daftarMapel = [
     { id: 'mtk', nama: 'MATEMATIKA', ikon: Calculator, warna: 'from-amber-500 to-orange-600' },
-    { id: 'ipa', nama: 'IPA', ikon: Beaker, warna: 'from-emerald-500 to-teal-600' },
-    { id: 'indo', nama: 'B. INDONESIA', ikon: Book, warna: 'from-blue-500 to-indigo-600' },
-    { id: 'inggris', nama: 'B. INGGRIS',ikon: Calculator, warna: 'from-amber-500 to-orange-600' },
-    { id: 'ips', nama: 'IPS', ikon: Calculator, warna: 'from-emerald-500 to-teal-600' },
-    { id: 'pkn', nama: 'PPKN', ikon:  Calculator, warna: 'from-slate-600 to-slate-800' },
-    { id: 'pai', nama: 'AGAMA', ikon:  Calculator, warna: 'from-green-600 to-lime-700' },
-    { id: 'tik', nama: 'INFORMATIKA', ikon: Calculator, warna: 'from-cyan-500 to-blue-600' },
-    { id: 'seni', nama: 'SENI BUDAYA', ikon: Palette, warna: 'from-fuchsia-500 to-purple-600' },
-    { id: 'pjok', nama: 'PJOK',ikon: Book, warna: 'from-orange-400 to-purple-600' },
+   
     ];
 
   return (
