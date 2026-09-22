@@ -58,8 +58,8 @@ const menuMateri = [
     urlPanduan: '#'
   },
   { 
-    id: 'bangun-ruang', 
-    title: 'Bangun Ruang', 
+    id: 'bangun-ruang-sisi-lengkung', 
+    title: 'Bangun Ruang Sisi Lengkung', 
     icon: Shapes, 
     color: 'from-cyan-500 to-blue-700', 
     urlMateri: 'https://murid.kemendikdasmen.go.id/sumber-belajar/materi/interaktif/volume-bangun-ruang-sisi-lengkung-bc04ebdd-f0e1-4af8-b456-1293df612473?id_sub_unit=e7729924-55f8-4b20-9392-550cc3560025',
