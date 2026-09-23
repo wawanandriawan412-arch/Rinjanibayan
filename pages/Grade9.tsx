@@ -35,7 +35,7 @@ const menuMateriKls9 = [
     title: 'Transformasi Geometri', 
     icon: Minimize2, 
     color: 'from-emerald-500 to-teal-700', 
-    urlMateri: 'LINK_CANVA_ANDA',
+    urlMateri: 'https://asblr.com/nebyCCv',
     urlGame: 'LINK_GAME_ANDA',
     urlPanduan: '#'
   },
